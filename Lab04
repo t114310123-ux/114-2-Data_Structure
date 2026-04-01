@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Student {
+    int id;
+    string name;
+    int chinese;
+    int english;
+    int math;
+    int social;
+    int science;
+};
+
+// 使用 Call by address (傳遞指標)
+void updateMath(Student *s) {
+    s->math = 100; // 透過指標修改原變數數值 [cite: 26, 29]
+}
+
+// 使用 Call by address (傳遞指標)
+void printStudent(Student *s) {
+    cout << "學生編號: " << s->id << endl;
+    cout << "姓名: " << s->name << endl;
+    cout << "數學成績: " << s->math << endl;
+}
+
+int main() {
+    Student one;
+    one.id = 1;
+    one.name = "張小美";
+    one.chinese = 77;
+    one.english = 83;
+    one.math = 86;
+    one.social = 68;
+    one.science = 91;
+
+    // 傳入 one 的地址 
+    updateMath(&one); 
+    printStudent(&one); 
+
+    return 0;
+}
