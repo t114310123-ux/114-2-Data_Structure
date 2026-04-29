@@ -16,7 +16,7 @@ class BinaryTree {
 public:
     TreeNode* root;
     BinaryTree() : root(nullptr) {}
-    // 使用 Level-order (層序) 建立二元樹 根據vector的內容
+    // 建立二元樹 根據vector的內容
     void buildTree(vector<int>& arr) {
         if (arr.empty()) return;
         queue<TreeNode*> q;
@@ -76,7 +76,7 @@ int main() {
     tree.postorder(tree.root);
     cout << "\n" << endl;
     // Q2輸出:右左子樹最大值
-    if (tree.root != nullptr) {//這裡處理當樹不完整的時候
+    if (tree.root != nullptr) {//這裡處理當樹不完整或是末葉的時候
         cout << "Inorder Traversal: ";
         tree.inorder(tree.root);
         cout << endl;
